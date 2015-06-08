@@ -1,0 +1,4 @@
+Rear Bumper-vehicle id:102|object id:1140|x:-0.130000|y:0.000000|z:1.000000|rx:0.000000|ry:0.000000|rz:0.000000
+Roof-vehicle id:102|object id:1035|x:0.000000|y:0.000000|z:1.000000|rx:0.000000|ry:0.000000|rz:0.000000
+Hood-vehicle id:102|object id:1012|x:0.000000|y:0.000000|z:1.000000|rx:0.000000|ry:0.000000|rz:0.000000
+Front Bumper-vehicle id:102|object id:1152|x:-0.059999|y:0.000000|z:1.000000|rx:0.000000|ry:0.000000|rz:0.000000
