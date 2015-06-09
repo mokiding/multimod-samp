@@ -1,6 +1,6 @@
 /*==============================================================================
 
-	SanMarino RolePlay
+	SA-MP MultiMod
 
 		Big thanks to WopsS for the initial concept and developing!
 		Also thanks to Nestor for the idea long ago with some very productive discussions!
@@ -146,65 +146,65 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 ==============================================================================*/
 
 //Main Scripts
-#include "SM/Core/Config.pwn"
-#include "SM/Utility/Colors.pwn"
+#include "MM/Core/Config.pwn"
+#include "MM/Utility/Colors.pwn"
 
 //MySQL
-#include "SM/Core/Mysql/Connect.pwn"
-#include "SM/Core/Mysql/LoadAccount.pwn"
+#include "MM/Core/Mysql/Connect.pwn"
+#include "MM/Core/Mysql/LoadAccount.pwn"
 
 //Utility Scripts
-#include "SM/Utility/Scripts.pwn"
-#include "SM/Utility/Check.pwn"
-#include "SM/Utility/Regex.pwn"
-#include "SM/Utility/Format.pwn"
-#include "SM/Utility/Organisation.pwn"
+#include "MM/Utility/Scripts.pwn"
+#include "MM/Utility/Check.pwn"
+#include "MM/Utility/Regex.pwn"
+#include "MM/Utility/Format.pwn"
+#include "MM/Utility/Organisation.pwn"
 	
 //UI
-#include "SM/Core/UI/GlobalUI.pwn"
-#include "SM/Core/UI/Logo.pwn"
+#include "MM/Core/UI/GlobalUI.pwn"
+#include "MM/Core/UI/Logo.pwn"
 
 //Dialogs
-#include "SM/Core/Dialogs/Main.pwn"
-#include "SM/Core/Dialogs/Register.pwn"
-#include "SM/Core/Dialogs/Login.pwn"
-#include "SM/Core/Dialogs/House.pwn"
-#include "SM/Core/Dialogs/Mapping.pwn"
-#include "SM/Core/Dialogs/Commands.pwn"
+#include "MM/Core/Dialogs/Main.pwn"
+#include "MM/Core/Dialogs/Register.pwn"
+#include "MM/Core/Dialogs/Login.pwn"
+#include "MM/Core/Dialogs/House.pwn"
+#include "MM/Core/Dialogs/Mapping.pwn"
+#include "MM/Core/Dialogs/Commands.pwn"
 
 //Timers
-#include "SM/Core/Timers/Global.pwn"
-#include "SM/Core/Timers/Player.pwn"
+#include "MM/Core/Timers/Global.pwn"
+#include "MM/Core/Timers/Player.pwn"
 
 //Systems
-#include "SM/Core/System/Fade.pwn"
-#include "SM/Core/System/Login.pwn"
-#include "SM/Core/System/Register.pwn"
-#include "SM/Core/System/CharCreator.pwn"
-#include "SM/Core/System/Spawn.pwn"
-#include "SM/Core/System/EnterExit.pwn"
-#include "SM/Core/System/COS.pwn"
-#include "SM/Core/System/Tune.pwn"
-#include "SM/Core/System/House.pwn"
-#include "SM/Core/System/Objects.pwn"
+#include "MM/Core/System/Fade.pwn"
+#include "MM/Core/System/Login.pwn"
+#include "MM/Core/System/Register.pwn"
+#include "MM/Core/System/CharCreator.pwn"
+#include "MM/Core/System/Spawn.pwn"
+#include "MM/Core/System/EnterExit.pwn"
+#include "MM/Core/System/COS.pwn"
+#include "MM/Core/System/Tune.pwn"
+#include "MM/Core/System/House.pwn"
+#include "MM/Core/System/Objects.pwn"
 //#include "SM/Core/System/Event.pwn" --need to finish (done around 10%)
 //#include "SM/Core/System/AntiCheat.pwn" --need to finish (done around 0%)
 
 //Commands
-#include "SM/Core/Commands/Organisation/Main.pwn"
-#include "SM/Core/Commands/Player.pwn"
-#include "SM/Core/Commands/Admin.pwn"
-#include "SM/Core/Commands/Main.pwn"
-#include "SM/Core/Commands/House.pwn"
+#include "MM/Core/Commands/Organisation/Main.pwn"
+#include "MM/Core/Commands/Player.pwn"
+#include "MM/Core/Commands/Admin.pwn"
+#include "MM/Core/Commands/Main.pwn"
+#include "MM/Core/Commands/House.pwn"
 
 #if defined GMDEBUG
-#include "SM/Core/Commands/Test.pwn"	
+#include "MM/Core/Commands/Test.pwn"	
 #endif
 
 main()
 {
 	print("\n\n/*==============================================================================\n\n");
-	print("	SanMarino RolePlay by m0k1 | DEV VERSION");
+	print("	SA-MP MultiMod by m0k1 | DEV VERSION");
 	print("\n\n==============================================================================*/\n\n");
 }
 
