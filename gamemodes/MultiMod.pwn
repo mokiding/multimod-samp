@@ -169,7 +169,6 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Core/Dialogs/Register.pwn"
 #include "MM/Core/Dialogs/Login.pwn"
 
-
 //Timers
 #include "MM/Core/Timers/Global.pwn"
 #include "MM/Core/Timers/Player.pwn"
@@ -179,8 +178,13 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Core/System/Login.pwn"
 #include "MM/Core/System/Register.pwn"
 #include "MM/Core/System/Objects.pwn"
-//#include "SM/Core/System/AntiCheat.pwn" --need to finish (done around 0%)
+//#include "SM/Core/System/AntiCheat.pwn"
 
+
+//Commands
+#include "MM/Core/Commands/Main.pwn"
+#include "MM/Core/Commands/Player.pwn"
+#include "MM/Core/Commands/Admin.pwn"
 #if defined GMDEBUG
 #include "MM/Core/Commands/Test.pwn"	
 #endif
@@ -189,9 +193,8 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 	RP Scripts
 
 ==============================================================================*/
-
-#include "MM/Modes/RP/Core/CharCreator.pwn"
 #include "MM/Modes/RP/Core/Spawn.pwn"
+#include "MM/Modes/RP/Core/CharCreator.pwn"
 #include "MM/Modes/RP/Core/EnterExit.pwn"
 #include "MM/Modes/RP/Core/COS.pwn"
 #include "MM/Modes/RP/Core/Tune.pwn"
@@ -204,11 +207,9 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Modes/RP/Dialogs/Commands.pwn"
 
 //Commands
-#include "MM/Core/Commands/Organisation/Main.pwn"
-#include "MM/Core/Commands/Player.pwn"
-#include "MM/Core/Commands/Admin.pwn"
-#include "MM/Core/Commands/Main.pwn"
-#include "MM/Core/Commands/House.pwn"
+#include "MM/Modes/RP/Commands/Organisation/Main.pwn"
+#include "MM/Modes/RP/Commands/Organisation/Leader.pwn"
+#include "MM/Modes/RP/Commands/House.pwn"
 
 /*==============================================================================
 
