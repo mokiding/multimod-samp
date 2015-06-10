@@ -49,7 +49,7 @@ public OnGameModeInit()
 #else
 	#define _ALS_OnGameModeInit
 #endif
- 
+
 #define OnGameModeInit main_OnGameModeInit
 #if defined main_OnGameModeInit
 	forward main_OnGameModeInit();
@@ -63,13 +63,13 @@ public OnGameModeInit()
 #include <a_mysql>															// By BlueG, R39-3:					https://github.com/pBlueG/SA-MP-MySQL
 #include <sscanf2>																// By Y_Less, 2.8.2:					http://forum.sa-mp.com/showthread.php?t=570927
 #include <crashdetect>														// By Zeex	, f4d84e2b1c:			http://forum.sa-mp.com/showthread.php?t=262796
-#include <YSI\y_timers>													// By Y_Less, f4d85a8:			http://forum.sa-mp.com/showthread.php?t=570884
-#include <YSI\y_commands>											// By Y_Less, f4d85a8:			http://forum.sa-mp.com/showthread.php?t=570884
-#include <YSI\y_master>													// By Y_Less, f4d85a8:			http://forum.sa-mp.com/showthread.php?t=570884
-#include <strlib>																	// By Slice, 48c183f0ad:			https://github.com/oscar-broman/strlib
-#include <streamer>															// By Incognito, 2.7.6:				http://forum.sa-mp.com/showthread.php?t=102865
+#include <YSI\y_timers>													// By Y_Less, 87cfb77:			http://forum.sa-mp.com/showthread.php?t=570884
+#include <YSI\y_commands>											// By Y_Less, 87cfb77:			http://forum.sa-mp.com/showthread.php?t=570884
+#include <YSI\y_master>													// By Y_Less, 87cfb77:			http://forum.sa-mp.com/showthread.php?t=570884
+#include <strlib>																	// By Slice, 48c183f:					https://github.com/oscar-broman/strlib
+#include <streamer>															// By Incognito, 2.7.7:				http://forum.sa-mp.com/showthread.php?t=102865
 #include <easyDialog>														// By Emmet,04/04/2015:  	http://forum.sa-mp.com/showthread.php?t=475838
-#include <libRegEx>															// By FF-Koala,f4a455a665:	http://forum.sa-mp.com/showthread.php?t=526725
+#include <libRegEx>															// By FF-Koala,c7da3fb:			http://forum.sa-mp.com/showthread.php?t=526725
 //#include <EVF>																	// By Emmet_	:							http://forum.sa-mp.com/showthread.php?t=486060
 //#include <modelsizes>													// By Y_Less:								http://forum.sa-mp.com/showthread.php?t=570965
 /*==============================================================================
@@ -137,11 +137,22 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 
 ==============================================================================*/
 
+/*==============================================================================
 
+	RP Scripts
+
+==============================================================================*/
+
+#include "MM/Core/System/CharCreator.pwn"
+#include "MM/Core/System/Spawn.pwn"
+#include "MM/Core/System/EnterExit.pwn"
+#include "MM/Core/System/COS.pwn"
+#include "MM/Core/System/Tune.pwn"
+#include "MM/Core/System/House.pwn"
 
 /*==============================================================================
 
-	Gamemode Scripts
+	DM Scripts
 
 ==============================================================================*/
 
@@ -180,12 +191,7 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Core/System/Fade.pwn"
 #include "MM/Core/System/Login.pwn"
 #include "MM/Core/System/Register.pwn"
-#include "MM/Core/System/CharCreator.pwn"
-#include "MM/Core/System/Spawn.pwn"
-#include "MM/Core/System/EnterExit.pwn"
-#include "MM/Core/System/COS.pwn"
-#include "MM/Core/System/Tune.pwn"
-#include "MM/Core/System/House.pwn"
+
 #include "MM/Core/System/Objects.pwn"
 //#include "SM/Core/System/Event.pwn" --need to finish (done around 10%)
 //#include "SM/Core/System/AntiCheat.pwn" --need to finish (done around 0%)
@@ -258,11 +264,8 @@ public OnVehicleDeath(vehicleid, killerid)
 
 public OnPlayerText(playerid, text[])
 {
-	new pName[MAX_PLAYER_NAME];
 	new string[256];
- 	GetPlayerName(playerid, pName, sizeof(pName));
-
-	format(string, sizeof(string), "%s kaze: %s", pName, text);
+	format(string, sizeof(string), "%s kaze: %s", GetNick(playerid), text);
 	ProxDetector(20.0, playerid, string, COLOR_FADE1, COLOR_FADE2, COLOR_FADE3, COLOR_FADE4, COLOR_FADE5);
 	return 0;
 }
@@ -429,10 +432,7 @@ public ShowStats(playerid, targetid)
 {
 	if(IsPlayerConnected(targetid))
 	{
-		new pName[MAX_PLAYER_NAME];
-		GetPlayerName(targetid, pName, sizeof(pName));
 		new string[256];
-
 		new level = PlayerInfo[targetid][pLevel];
 		new sex[8];
 		if(PlayerInfo[targetid][pSex] == 1)
@@ -451,13 +451,13 @@ public ShowStats(playerid, targetid)
 		if(PlayerInfo[targetid][pPremiumAccount] == 1)
 		{
 			premiumaccount = "Da";
-	 	}
-	 	else
-	 	{
-	 		premiumaccount = "Ne";
+			}
+			else
+			{
+				premiumaccount = "Ne";
 		}
 		SendClientMessage(playerid, COLOR_SERVER_GREEN,"_______________________________________");
-		format(string, sizeof(string), "%s stats", pName);
+		format(string, sizeof(string), "%s stats", GetNick(targetid));
 		SendClientMessage(playerid, COLOR_WHITE, string);
 		format(string, sizeof(string), "Level:[%d] Pol:[%s] Godine:[%d] Novac:[$%s] Banka:[$%s] Telefon:[%s]", level, sex, age, FormatNumber(cash), FormatNumber(account), PhoneFormat(phonenumber));
 		SendClientMessage(playerid, COLOR_WHITE,string);
