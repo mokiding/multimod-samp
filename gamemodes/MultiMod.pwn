@@ -137,40 +137,29 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 
 ==============================================================================*/
 
-/*==============================================================================
 
-	RP Scripts
 
-==============================================================================*/
-
-#include "MM/Core/System/CharCreator.pwn"
-#include "MM/Core/System/Spawn.pwn"
-#include "MM/Core/System/EnterExit.pwn"
-#include "MM/Core/System/COS.pwn"
-#include "MM/Core/System/Tune.pwn"
-#include "MM/Core/System/House.pwn"
 
 /*==============================================================================
 
-	DM Scripts
+	Core Scripts
 
 ==============================================================================*/
-
 //Main Scripts
 #include "MM/Core/Config.pwn"
 #include "MM/Utility/Colors.pwn"
-
-//MySQL
-#include "MM/Core/Mysql/Connect.pwn"
-#include "MM/Core/Mysql/LoadAccount.pwn"
 
 //Utility Scripts
 #include "MM/Utility/Scripts.pwn"
 #include "MM/Utility/Check.pwn"
 #include "MM/Utility/Regex.pwn"
 #include "MM/Utility/Format.pwn"
-#include "MM/Utility/Organisation.pwn"
-	
+
+
+//MySQL
+#include "MM/Core/Mysql/Connect.pwn"
+#include "MM/Core/Mysql/LoadAccount.pwn"
+
 //UI
 #include "MM/Core/UI/GlobalUI.pwn"
 #include "MM/Core/UI/Logo.pwn"
@@ -179,9 +168,7 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Core/Dialogs/Main.pwn"
 #include "MM/Core/Dialogs/Register.pwn"
 #include "MM/Core/Dialogs/Login.pwn"
-#include "MM/Core/Dialogs/House.pwn"
-#include "MM/Core/Dialogs/Mapping.pwn"
-#include "MM/Core/Dialogs/Commands.pwn"
+
 
 //Timers
 #include "MM/Core/Timers/Global.pwn"
@@ -191,10 +178,30 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Core/System/Fade.pwn"
 #include "MM/Core/System/Login.pwn"
 #include "MM/Core/System/Register.pwn"
-
 #include "MM/Core/System/Objects.pwn"
-//#include "SM/Core/System/Event.pwn" --need to finish (done around 10%)
 //#include "SM/Core/System/AntiCheat.pwn" --need to finish (done around 0%)
+
+#if defined GMDEBUG
+#include "MM/Core/Commands/Test.pwn"	
+#endif
+/*==============================================================================
+
+	RP Scripts
+
+==============================================================================*/
+
+#include "MM/Modes/RP/Core/CharCreator.pwn"
+#include "MM/Modes/RP/Core/Spawn.pwn"
+#include "MM/Modes/RP/Core/EnterExit.pwn"
+#include "MM/Modes/RP/Core/COS.pwn"
+#include "MM/Modes/RP/Core/Tune.pwn"
+#include "MM/Modes/RP/Core/House.pwn"
+#include "MM/Modes/RP/Core/Organisation.pwn"
+
+//Dialogs
+#include "MM/Modes/RP/Dialogs/House.pwn"
+#include "MM/Modes/RP/Dialogs/Mapping.pwn"
+#include "MM/Modes/RP/Dialogs/Commands.pwn"
 
 //Commands
 #include "MM/Core/Commands/Organisation/Main.pwn"
@@ -203,9 +210,16 @@ forward ProxDetector(Float:radi, playerid, string[],col1,col2,col3,col4,col5);
 #include "MM/Core/Commands/Main.pwn"
 #include "MM/Core/Commands/House.pwn"
 
-#if defined GMDEBUG
-#include "MM/Core/Commands/Test.pwn"	
-#endif
+/*==============================================================================
+
+	DM Scripts
+
+==============================================================================*/
+
+
+
+//-------------------------------
+
 
 main()
 {
