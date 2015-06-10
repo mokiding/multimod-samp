@@ -260,22 +260,6 @@ public OnPlayerConnect(playerid)
 	return 1;
 }
 
-
-public OnPlayerDeath(playerid, killerid, reason)
-{
-	return 1;
-}
-
-public OnVehicleSpawn(vehicleid)
-{
-	return 1;
-}
-
-public OnVehicleDeath(vehicleid, killerid)
-{
-	return 1;
-}
-
 public OnPlayerText(playerid, text[])
 {
 	new string[256];
@@ -482,15 +466,5 @@ public ShowStats(playerid, targetid)
 		SendClientMessage(playerid, COLOR_SERVER_GREEN,"_______________________________________");
 
 	}
-	return 1;
-}
-
-public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
-{
-	return 1;
-}
-
-public OnPlayerClickPlayer(playerid, clickedplayerid, source)
-{
 	return 1;
 }
